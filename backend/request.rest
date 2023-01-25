@@ -1,0 +1,88 @@
+# Create a user
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+  "name": "Ariq Hikari",
+  "email": "admin@gmail.com",
+  "password": "123456",
+  "confPassword": "123456",
+  "role": "admin"
+}
+
+###
+# Get ALl Users
+GET http://localhost:5000/users 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJBcmlxIEhpa2FyaSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjcwMzI4NzYzLCJleHAiOjE2NzAzMjg3Nzh9.gkCbDXprzBGfSLCzogIl8DAUW-q_YRHFA3SmLpB_Xt8
+
+###
+# Get Single User
+GET http://localhost:5000/users/af51277e-0eda-4edd-9bb3-dc3ebacbf740
+
+###
+# Update User
+PATCH  http://localhost:5000/users/af51277e-0eda-4edd-9bb3-dc3ebacbf740
+Content-Type: application/json
+
+{
+  "name": "John Updated",
+  "email": "john@gmail.com",
+  "password": "",
+  "confPassword": "",
+  "role": "user"
+}
+
+###
+# Delete a user
+DELETE http://localhost:5000/users/af51277e-0eda-4edd-9bb3-dc3ebacbf740
+
+###
+# Login user
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "email": "admin@gmail.com",
+  "password": "123456"
+}
+
+###
+# Refresh Token
+GET http://localhost:5000/token
+
+###
+# Logout
+DELETE http://localhost:5000/logout
+
+###
+# Get ALl Products
+GET http://localhost:5000/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJBcmlxIEhpa2FyaSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjcwMzMxMTQ5LCJleHAiOjE2NzAzMzExNjR9.0HJxgre9Rayh0pbwif2EM32ClM0WrWAuck40Ns9t6fk
+
+###
+# Get Single Product
+GET http://localhost:5000/products/891c2f70-6312-460d-b542-736c041c066b
+
+###
+# Create a products
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+  "name": "Product 6",
+  "price": 992
+}
+
+###
+# Update a products
+PATCH http://localhost:5000/products/891c2f70-6312-460d-b542-736c041c066b
+Content-Type: application/json
+
+{
+  "name": "Product Updated",
+  "price": 974
+}
+
+###
+# Delete a products
+DELETE http://localhost:5000/products/891c2f70-6312-460d-b542-736c041c066b
